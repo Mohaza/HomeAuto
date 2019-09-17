@@ -1,7 +1,7 @@
 import { House } from './house';
 
 export class MockData {
-
+    //A method that returns a Map of houses.
     getHouses(): Map<string,House>{
         let map = new Map<string,House>();
         map.set("house1",{
@@ -97,7 +97,6 @@ export class MockData {
         });
         return map;
       }
-
       getHumidity(){
           return parseFloat((Math.random() * (0.95-0.10) + 0.10).toFixed(2));
       }

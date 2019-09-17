@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // retrieve the specific id of the url
     this.route.paramMap.subscribe(params => {
       this.homeID = params.get("id");
-      console.log(this.homeID)
     });
     if(this.homes.has(this.homeID)){
       this.home = this.homes.get(this.homeID);
