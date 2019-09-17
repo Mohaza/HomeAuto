@@ -1,15 +1,18 @@
-
+<mat-toolbar class="title">
+  <div class="text"><b style="text-decoration :underline">HomeAuto</b><br> <i>{{homeTitle}}</i> </div> 
+</mat-toolbar>
+<br>
 <mat-accordion multi=true>
   <mat-expansion-panel *ngFor="let room of roomsList">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <b>{{room.title}}</b>
+        <b>{{room.name}}</b>
       </mat-panel-title>
       <mat-panel-description>
         
       </mat-panel-description>
     </mat-expansion-panel-header>
-     <p>Temperature: {{room.temp}}°C <br>
-      Humidity: {{room.humidity}}%</p>
+     <p>Temperature: {{room.temperature}}°C <br>
+      Humidity: {{room.humidity}}</p>
   </mat-expansion-panel>
 </mat-accordion>

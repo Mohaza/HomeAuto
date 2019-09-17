@@ -1,0 +1,10 @@
+.title {
+    background-color: teal;
+    color: white;
+  }
+.text{
+    margin: auto
+}
+.mat-expansion-panel{
+    background-color: cyan
+}

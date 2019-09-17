@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from '../room';
-import { HousesService } from '../houses.service';
+import { HouseService } from '../house.service';
+import { MockData } from '../mock-data';
 import { ActivatedRoute } from '@angular/router';
 import { House } from '../house';
 @Component({
@@ -12,8 +13,10 @@ export class HomeComponent implements OnInit {
   homeID:any;
   roomsList:Room[];
   homes :Map<string, House>;
-  constructor(houses: HousesService, private route: ActivatedRoute) {
-    this.homes = houses.getHouses();
+  home: House;
+  homeTitle: string =""
+  constructor(data: MockData, private route: ActivatedRoute,private houses : HouseService) {
+    this.homes = data.getHouses();
   }
 
   ngOnInit() {
@@ -22,9 +25,13 @@ export class HomeComponent implements OnInit {
       console.log(this.homeID)
     });
     if(this.homes.has(this.homeID)){
-      this.roomsList =this.homes.get(this.homeID)['rooms'];
+      this.home = this.homes.get(this.homeID);
+      this.roomsList =this.home['rooms'];
+      this.houses.updateData(this.roomsList);
+      this.homeTitle = this.homeID;
     }
     
+
     
 
   }

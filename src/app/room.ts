@@ -1,5 +1,5 @@
 export interface Room {
-    title : string;
-    temp : number;
+    name : string;
+    temperature : number;
     humidity : number;
 }
